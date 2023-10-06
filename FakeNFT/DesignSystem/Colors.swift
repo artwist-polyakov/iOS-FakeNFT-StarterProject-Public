@@ -21,17 +21,17 @@ extension UIColor {
     }
 
     // Colors with dark mode
-    static let blackWithDarkMode = UIColor(named: "blackWithDarkMode") ?? UIColor.black
-    static let whiteWithDarkMode = UIColor(named: "whiteWithDarkMode") ?? UIColor.white
-    static let lightGreyWithDarkMode = UIColor(named: "lightGreyWithDarkMode") ?? UIColor.lightGray
+    static let ypBlackWithDarkMode = UIColor(named: "blackWithDarkMode") ?? UIColor.black
+    static let ypWhiteWithDarkMode = UIColor(named: "whiteWithDarkMode") ?? UIColor.white
+    static let ypLightGreyWithDarkMode = UIColor(named: "lightGreyWithDarkMode") ?? UIColor.lightGray
     
     // Universal colors
-    static let grayUniversal = UIColor(named: "greyUniversal") ?? UIColor.gray
+    static let ypGrayUniversal = UIColor(named: "greyUniversal") ?? UIColor.gray
     static let ypRed = UIColor(named: "redUniversal") ?? UIColor.red
     static let ypGreen = UIColor(named: "green") ?? UIColor.green
     static let ypBackground = UIColor(named: "background") ?? UIColor.systemBackground
     static let ypBlue = UIColor(named: "blue") ?? UIColor.blue
-    static let blackUniversal = UIColor(named: "blackUniversal") ?? UIColor.blue
-    static let whiteUniversal = UIColor(named: "whiteUniversal") ?? UIColor.white
+    static let ypBlackUniversal = UIColor(named: "blackUniversal") ?? UIColor.blue
+    static let ypWhiteUniversal = UIColor(named: "whiteUniversal") ?? UIColor.white
     static let ypYellow = UIColor(named: "yellow") ?? UIColor.yellow
 }
