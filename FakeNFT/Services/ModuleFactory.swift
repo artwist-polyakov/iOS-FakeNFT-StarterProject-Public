@@ -22,6 +22,7 @@ struct ModuleFactory {
         
         let tabBar = UITabBarController()
         tabBar.tabBar.unselectedItemTintColor = UIColor.ypBlackWithDarkMode
+        tabBar.tabBar.backgroundColor = .ypWhiteWithDarkMode
         
         tabBar.viewControllers = [profileVC, catalogVC, cartVC, statisticVC]
         return tabBar
