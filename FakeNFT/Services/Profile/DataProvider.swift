@@ -17,6 +17,19 @@ final class DataProvider: DataProviderProtocol {
         }
     }
     
+    func changeProfile(profile: Profile, completion: @escaping (Result<Profile, Error>) -> Void) {
+        let url = createURLWithPathAndQueryItems(path: Resources.Network.MockAPI.Paths.profile, queryItems: nil)
+        let request = NetworkRequestModel(endpoint: url, httpMethod: .put, dto: profile)
+        networkClient.send(request: request, type: Profile.self) { result in
+            switch result {
+            case .success(let profile):
+                completion(.success(profile))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
     // MARK: - Private Functions
     private func createURLWithPathAndQueryItems(path: String, queryItems: [URLQueryItem]?) -> URL? {
         

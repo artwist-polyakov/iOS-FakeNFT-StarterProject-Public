@@ -17,8 +17,6 @@ final class ProfileViewModel: ProfileViewModelProtocol {
         fetchProfile()
     }
 
-    // MARK: - Private Methods:
-
     func fetchProfile() {
         dataProvider?.fetchProfile(completion: { [weak self] result in
             guard let self else { return }
@@ -31,8 +29,6 @@ final class ProfileViewModel: ProfileViewModelProtocol {
             }
         })
     }
-
-    // MARK: - Public Methods:
 
     func changeProfile(profile: Profile) {
         dataProvider?.changeProfile(profile: profile, completion: { [weak self] result in

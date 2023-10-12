@@ -14,7 +14,7 @@ enum Resources {
     enum Network {
         
         enum MockAPI {
-            static let defaultStringURL = "https://64c516a6c853c26efada7a11.mockapi.io"
+            static let defaultStringURL = "https://651ff0cc906e276284c3c1bc.mockapi.io"
             
             enum Paths {
                 static let currencies = "/api/v1/currencies"

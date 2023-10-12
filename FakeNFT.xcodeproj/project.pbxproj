@@ -43,6 +43,7 @@
 		7B2E89742AD8968F0019EA38 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2E89732AD8968F0019EA38 /* DataProvider.swift */; };
 		7B2E89762AD897FA0019EA38 /* NetworkRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2E89752AD897FA0019EA38 /* NetworkRequestModel.swift */; };
 		7B2E89782AD899140019EA38 /* HandlingErrorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2E89772AD899140019EA38 /* HandlingErrorService.swift */; };
+		7B2E897B2AD89C7D0019EA38 /* YPNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2E897A2AD89C7D0019EA38 /* YPNavigationController.swift */; };
 		AF1A63D82AD81863000F8A4E /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A63D12AD81863000F8A4E /* CatalogViewController.swift */; };
 		AF1A63D92AD81863000F8A4E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A63D32AD81863000F8A4E /* ProfileViewController.swift */; };
 		AF1A63DA2AD81863000F8A4E /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF1A63D52AD81863000F8A4E /* CartViewController.swift */; };
@@ -109,6 +110,7 @@
 		7B2E89732AD8968F0019EA38 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		7B2E89752AD897FA0019EA38 /* NetworkRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequestModel.swift; sourceTree = "<group>"; };
 		7B2E89772AD899140019EA38 /* HandlingErrorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandlingErrorService.swift; sourceTree = "<group>"; };
+		7B2E897A2AD89C7D0019EA38 /* YPNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YPNavigationController.swift; sourceTree = "<group>"; };
 		AF1A63D12AD81863000F8A4E /* CatalogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
 		AF1A63D32AD81863000F8A4E /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		AF1A63D52AD81863000F8A4E /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
@@ -339,9 +341,18 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		7B2E89792AD89C2A0019EA38 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				7B2E897A2AD89C7D0019EA38 /* YPNavigationController.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
 		AF1A63CF2AD81863000F8A4E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				7B2E89792AD89C2A0019EA38 /* UIComponents */,
 				AF1A63D02AD81863000F8A4E /* Catalog */,
 				AF1A63D22AD81863000F8A4E /* Profile */,
 				AF1A63D42AD81863000F8A4E /* Cart */,
@@ -589,6 +600,7 @@
 				3F6806D729CBC50A00B4F915 /* CellsReusingUtils.swift in Sources */,
 				3F6806D329CBBE9600B4F915 /* NetworkRequest.swift in Sources */,
 				7B2E894F2AD885E30019EA38 /* ProfileViewModel.swift in Sources */,
+				7B2E897B2AD89C7D0019EA38 /* YPNavigationController.swift in Sources */,
 				7B2E895F2AD88D7B0019EA38 /* UIView+Extension.swift in Sources */,
 				AF1A63DA2AD81863000F8A4E /* CartViewController.swift in Sources */,
 				AF1A63D92AD81863000F8A4E /* ProfileViewController.swift in Sources */,
