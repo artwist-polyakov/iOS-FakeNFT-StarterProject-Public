@@ -158,8 +158,6 @@
 			children = (
 				3F478ECE29DB474E00F6D39E /* Colors.swift */,
 				3F478ED029DB476500F6D39E /* Fonts.swift */,
-				7B2E89572AD887890019EA38 /* UIViewController+Extension.swift */,
-				7B2E895E2AD88D7B0019EA38 /* UIView+Extension.swift */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -246,6 +244,8 @@
 			children = (
 				3F6806CF29CBBDB100B4F915 /* NetworkClient */,
 				3F6806D629CBC50A00B4F915 /* CellsReusingUtils.swift */,
+				7B2E89572AD887890019EA38 /* UIViewController+Extension.swift */,
+				7B2E895E2AD88D7B0019EA38 /* UIView+Extension.swift */,
 				3FC8C39229D246BA0081F015 /* DateFormatters+Presets.swift */,
 			);
 			path = Foundation;
