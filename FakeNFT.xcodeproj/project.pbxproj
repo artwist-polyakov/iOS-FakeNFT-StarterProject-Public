@@ -352,6 +352,7 @@
 		AF1A63CF2AD81863000F8A4E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				7B2E89692AD894100019EA38 /* WebView */,
 				7B2E89792AD89C2A0019EA38 /* UIComponents */,
 				AF1A63D02AD81863000F8A4E /* Catalog */,
 				AF1A63D22AD81863000F8A4E /* Profile */,
@@ -372,7 +373,6 @@
 		AF1A63D22AD81863000F8A4E /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				7B2E89692AD894100019EA38 /* WebView */,
 				7B2E89662AD893920019EA38 /* FavouriteNftsVC */,
 				7B2E89632AD892DE0019EA38 /* MyNftsVC */,
 				7B2E89602AD8907F0019EA38 /* EditProfileVC */,
