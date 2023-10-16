@@ -6,24 +6,28 @@
 
 # Profile Flow Decomposition
 
-
-## Экран Profile (est 24 hr; fact x).
+#1st iteration
+ 
+## Экран Profile (est 24 hr; fact 10 hr).
 
 #### Верстка
-- Значок редактирования (est: 15 min; fact: x min).
-- Фото пользователя (est: 30 min; fact: x min).
-- label Имя пользователя (est: 30 min; fact: x min). 
-- label Описание пользователя (est: 30 min; fact: x min). 
-- label Сайт пользователя (est: 15 min; fact: x min).
-- создание ячейки таблицы (est: 120 min ; fact: x min). 
-- создание таблицы (est: 60 min; fact: x min).
+- Значок редактирования (est: 15 min; fact: 15 min).
+- Фото пользователя (est: 30 min; fact: 20 min).
+- label Имя пользователя (est: 30 min; fact: 20 min). 
+- label Описание пользователя (est: 30 min; fact: 20 min). 
+- label Сайт пользователя (est: 15 min; fact: 15 min).
+- создание ячейки таблицы (est: 120 min ; fact: 60 min). 
+- создание таблицы (est: 60 min; fact: 45 min).
 
-`Total:` est: 300 min; fact: x min).
+`Total:` est: 300 min; fact: 195 min).
 
 #### Логика
-- Переход на экраны: редактирования, мои нфт, избранные нфт, на вебвью с сайтом пользователя (est: 60 min; fact: x min).
+- Переход на экраны: редактирования, мои нфт, избранные нфт, на вебвью с сайтом пользователя (est: 60 min; fact: 40 min).
+- Сетевая слой для работы с получением данных профиля (est: 180 min; fact: 200 min).
 
-`Total:` est: 360 min; fact: x min.
+`Total:` est: 240 min; fact: 240 min.
+
+#2nd Iteration
 
 ## Экран Profile Editing (est 48 hr; fact x).
 
@@ -56,6 +60,8 @@
 - Индикатор загрузки (est: 30 min; fact: x min).
 
 `Total:` est: 270 min; fact: x min.
+
+# 3rd Iteration
 
 ## Экран Избранные NFT (est 72 hr; fact x).
 
