@@ -5,7 +5,6 @@
 //  Created by Vitaly on 08.10.2023.
 //
 
-import Foundation
 import UIKit
 
 struct ModuleFactory {
@@ -15,10 +14,29 @@ struct ModuleFactory {
         
         // Если процедура создания VC сложная, то нужно под нее сделать отдельную фабрику
         
-        let cartVC = createViewController(vc: createCartViewController(),title:  "Корзина", image: UIImage(named: "Cart"))
-        let catalogVC = createViewController(vc: createCatalogViewController(),title:  "Каталог", image: UIImage(named: "Catalog"))
-        let profileVC = createViewController(vc: createProfileViewController(),title:  "Профиль", image: UIImage(named: "Profile"))
-        let statisticVC = createViewController(vc: createStatisticViewController(),title:  "Статистика", image: UIImage(named: "Statistics"))
+        let cartVC = createViewController(
+            vc: createCartViewController(),
+            title:  "Корзина",
+            image: UIImage(named: "Cart")
+        )
+        
+        let catalogVC = createViewController(
+            vc: createCatalogViewController(),
+            title:  "Каталог",
+            image: UIImage(named: "Catalog")
+        )
+        
+        let profileVC = createViewController(
+            vc: createProfileViewController(),
+            title:  "Профиль",
+            image: UIImage(named: "Profile")
+        )
+        
+        let statisticVC = createViewController(
+            vc: createStatisticViewController(),
+            title:  "Статистика",
+            image: UIImage(named: "Statistics")
+        )
         
         let tabBar = UITabBarController()
         tabBar.tabBar.unselectedItemTintColor = UIColor.ypBlackWithDarkMode

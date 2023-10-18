@@ -5,7 +5,6 @@
 //  Created by Vitaly on 08.10.2023.
 //
 
-import Foundation
 import UIKit
 
 final class CartViewController: UIViewController {
@@ -26,7 +25,6 @@ final class CartViewController: UIViewController {
 
         setupUI()
         view.backgroundColor = .white
-        print("CartViewController viewDidLoad")
     }
     // MARK: - Private Methods
     //

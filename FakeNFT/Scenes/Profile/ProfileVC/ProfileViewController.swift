@@ -18,19 +18,7 @@ final class ProfileViewController: UIViewController {
         setupBackground()
         setupNavBar()
         setupConstrains()
-        viewModel?.profileObservable.bind(action: { [weak self] _ in
-            guard let self else { return }
-            self.resumeMethodOnMainThread(self.unblockUI, with: ())
-            self.resumeMethodOnMainThread(self.isNavigationBarClear, with: false)
-            self.setupProfile()
-        })
-        
-        viewModel?.showErrorAlert = { [weak self] message in
-            guard let self else { return }
-            self.resumeMethodOnMainThread(self.unblockUI, with: ())
-            self.resumeMethodOnMainThread(self.isNavigationBarClear, with: false)
-            self.resumeMethodOnMainThread(self.showNotificationBanner, with: message)
-        }
+        setUpBindings()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -158,6 +146,22 @@ final class ProfileViewController: UIViewController {
             self.profileSite.text = profile.website
             self.profileAvatarImage.kf.setImage(with: avatarUrl)
             self.profileTableView.reloadData()
+        }
+    }
+    
+    private func setUpBindings() {
+        viewModel?.profileObservable.bind(action: { [weak self] _ in
+            guard let self else { return }
+            self.resumeMethodOnMainThread(self.unblockUI, with: ())
+            self.resumeMethodOnMainThread(self.isNavigationBarClear, with: false)
+            self.setupProfile()
+        })
+        
+        viewModel?.showErrorAlert = { [weak self] message in
+            guard let self else { return }
+            self.resumeMethodOnMainThread(self.unblockUI, with: ())
+            self.resumeMethodOnMainThread(self.isNavigationBarClear, with: false)
+            self.resumeMethodOnMainThread(self.showNotificationBanner, with: message)
         }
     }
     
