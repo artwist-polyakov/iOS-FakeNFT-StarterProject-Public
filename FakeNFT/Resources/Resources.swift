@@ -9,6 +9,10 @@ enum Resources {
         enum NotificationBanner {
             static let notificationBannerImage = UIImage(systemName: "antenna.radiowaves.left.and.right.slash")
         }
+        
+        enum NFTBrowsing {
+            static let cancellButton = UIImage(systemName: "xmark")?.withTintColor(.ypBlackWithDarkMode, renderingMode: .alwaysOriginal)
+        }
     }
     
     enum Network {

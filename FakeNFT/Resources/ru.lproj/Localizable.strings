@@ -6,6 +6,16 @@
   
 */
 
-
+"general.OK" = "OK";
+"general.cancel" = "Отменить";
 
 "application.title" = "Фейк NFT";
+
+// EditScreen
+"profile.editScreen.changePhoto" = "Сменить фото";
+"profile.editScreen.name" = "Имя";
+"profile.editScreen.description" = "Описание";
+"profile.editScreen.site" = "Cайт";
+"profile.editScreen.addPicture" = "Добавить изображение";
+"profile.editScreen.pointLink" = "Укажите ссылку на фото";
+"profile.editScreen.enterLink" = "Введите ссылку";
