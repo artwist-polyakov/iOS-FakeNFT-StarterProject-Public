@@ -1,8 +1,13 @@
-//
-//  MyNftsViewModelProtocol.swift
-//  FakeNFT
-//
-//  Created by Leo Bonhart on 18.10.2023.
-//
+import UIKit
 
-import Foundation
+protocol MyNFTViewModelProtocol: AnyObject {
+
+    var nftCardsObservable: Observable<NFTCards?> { get }
+    var usersObservable: Observable<Users?> { get }
+    var profileObservable: Observable<Profile?> { get }
+
+    func fetchNtfCards(nftIds: [String])
+    func sortNFTCollection(option: SortingOption)
+    func changeProfile(likesIds: [String])
+    var showErrorAlert: ((String) -> Void)? { get set }
+}

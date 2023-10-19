@@ -1,8 +1,9 @@
-//
-//  MyNftCellViewModel.swift
-//  FakeNFT
-//
-//  Created by Leo Bonhart on 18.10.2023.
-//
+import UIKit
 
-import Foundation
+struct MyNFTCellViewModel {
+    let nftImage: UIImage
+    let nftName: String
+    let nftRateImage: UIImage
+    let nftFromName: String
+    let nftPrice: String
+}
