@@ -21,7 +21,7 @@ enum SortingOption: CaseIterable {
         case .byQuantity:
             return NSLocalizedString("sorting.byQuantity", tableName: "Localizable", comment: "sorting by Quantity")
         case .close:
-            return NSLocalizedString("sorting.byQuantity", tableName: "Localizable", comment: "sorting by Quantity")
+            return NSLocalizedString("general.close", tableName: "Localizable", comment: "Close")
         }
     }
     

@@ -10,10 +10,16 @@
 "general.cancel" = "Отменить";
 "general.close" = "Закрыть";
 "general.price" = "Цена";
+"genreal.error" = "Ошибка";
 
 "application.title" = "Фейк NFT";
 
 // MARK: - Profile
+// MainScreen
+"profile.mainScreen.myNFT" = "Мои NFT";
+"profile.mainScreen.favouritesNFT" = "Избранные NFT";
+"profile.mainScreen.aboutDeveloper" = "О разработчике";
+
 // EditScreen
 "profile.editScreen.changePhoto" = "Сменить фото";
 "profile.editScreen.name" = "Имя";

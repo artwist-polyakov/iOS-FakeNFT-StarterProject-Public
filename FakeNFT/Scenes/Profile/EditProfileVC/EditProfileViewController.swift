@@ -59,7 +59,7 @@ final class EditProfileViewController: UIViewController {
         let editAvatarButton = UIButton()
         editAvatarButton.backgroundColor = .ypLightGreyWithDarkMode
         editAvatarButton.layer.cornerRadius = 35
-        editAvatarButton.setTitle("Сменить фото", for: .normal)
+        editAvatarButton.setTitle(NSLocalizedString("profile.editScreen.changePhoto",tableName: "Localizable", comment: "Change photo"), for: .normal)
         editAvatarButton.titleLabel?.numberOfLines = 0
         editAvatarButton.titleLabel?.font = .systemFont(ofSize: 10)
         editAvatarButton.setTitleColor(.white, for: .normal)
@@ -74,7 +74,7 @@ final class EditProfileViewController: UIViewController {
     
     private lazy var nameLabel: UILabel = {
         let nameLabel = UILabel()
-        nameLabel.text = "Имя"
+        nameLabel.text = NSLocalizedString("profile.editScreen.name",tableName: "Localizable", comment: "Name")
         nameLabel.font = UIFont.systemFont(ofSize: 22, weight: .bold)
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(nameLabel)
@@ -102,7 +102,7 @@ final class EditProfileViewController: UIViewController {
     
     private lazy var descriptionLabel: UILabel = {
         let descriptionLabel = UILabel()
-        descriptionLabel.text = "Описание"
+        descriptionLabel.text = NSLocalizedString("profile.editScreen.description",tableName: "Localizable", comment: "Description")
         descriptionLabel.font = UIFont.systemFont(ofSize: 22, weight: .bold)
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(descriptionLabel)
@@ -131,7 +131,7 @@ final class EditProfileViewController: UIViewController {
     
     private lazy var siteLabel: UILabel = {
         let siteLabel = UILabel()
-        siteLabel.text = "Cайт"
+        siteLabel.text = NSLocalizedString("profile.editScreen.site",tableName: "Localizable", comment: "Site")
         siteLabel.font = UIFont.systemFont(ofSize: 22, weight: .bold)
         siteLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(siteLabel)
@@ -210,8 +210,8 @@ final class EditProfileViewController: UIViewController {
     // MARK: - Alert
     
     func showErrorAlert(message: String) {
-        let alert = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let alert = UIAlertController(title: NSLocalizedString("general.error",tableName: "Localizable", comment: "Error"), message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: NSLocalizedString("general.ok",tableName: "Localizable", comment: "OK"), style: .default, handler: nil)
         alert.addAction(okAction)
 
         present(alert, animated: true, completion: nil)
