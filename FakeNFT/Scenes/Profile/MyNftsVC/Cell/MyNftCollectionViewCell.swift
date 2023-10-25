@@ -79,10 +79,10 @@ final class MyNFTCollectionViewCell: UICollectionViewCell {
             imageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             imageView.widthAnchor.constraint(equalToConstant: 108),
             
-            likeButton.topAnchor.constraint(equalTo: imageView.topAnchor, constant: 12),
-            likeButton.trailingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: -12),
-            likeButton.widthAnchor.constraint(equalToConstant: 26),
-            likeButton.heightAnchor.constraint(equalToConstant: 22),
+            likeButton.topAnchor.constraint(equalTo: imageView.topAnchor),
+            likeButton.trailingAnchor.constraint(equalTo: imageView.trailingAnchor),
+            likeButton.widthAnchor.constraint(equalToConstant: 30),
+            likeButton.heightAnchor.constraint(equalToConstant: 30),
             
             nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 23),
             nameLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 20),
