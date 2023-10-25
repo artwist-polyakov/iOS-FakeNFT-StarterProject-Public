@@ -94,7 +94,7 @@ final class MyNFTCollectionViewCell: UICollectionViewCell {
             
             fromLabel.topAnchor.constraint(equalTo: rateImage.bottomAnchor, constant: 4),
             fromLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 20),
-            fromLabel.widthAnchor.constraint(equalToConstant: 78),
+            fromLabel.trailingAnchor.constraint(equalTo: priceLabel.leadingAnchor, constant: 39),
             
             priceTitleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 33),
             priceTitleLabel.leadingAnchor.constraint(equalTo: nameLabel.trailingAnchor, constant: 70),
