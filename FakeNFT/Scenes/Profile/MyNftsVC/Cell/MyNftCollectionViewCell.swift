@@ -139,11 +139,11 @@ final class MyNFTCollectionViewCell: UICollectionViewCell {
         fromLabel.text = model.author
         priceLabel.text = "\(model.price) ETH"
         
-        if model.isLiked {
-            likeButton.setImage(Resources.Images.NFTCollectionCell.likedButton, for: .normal)
-        } else {
-            likeButton.setImage(Resources.Images.NFTCollectionCell.unlikedButton, for: .normal)
-        }
+        let likeButtonImage = model.isLiked ?
+                Resources.Images.NFTCollectionCell.likedButton :
+                Resources.Images.NFTCollectionCell.unlikedButton
+
+        likeButton.setImage(likeButtonImage, for: .normal)
         
         guard let firstImage = model.images.first,
               let imageUrl = URL(string: firstImage) else { return }
