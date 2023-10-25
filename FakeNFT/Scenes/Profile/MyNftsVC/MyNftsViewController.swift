@@ -8,7 +8,7 @@ final class MyNftsViewController: UIViewController {
 
     private var viewModel: MyNFTViewModelProtocol?
     private var alertService: AlertServiceProtocol?
-    private lazy var dataProvider = DataProvider()
+    private lazy var dataProvider = ProfileDataProvider()
     
     // MARK: - Lifecycle
 
@@ -17,22 +17,7 @@ final class MyNftsViewController: UIViewController {
         setupUI()
         setupViews()
         setupConstraints()
-        viewModel?.nftCardsObservable.bind { [weak self] _ in
-            guard let self else { return }
-            self.resumeMethodOnMainThread(self.collectionView.reloadData, with: ())
-        }
-        
-        viewModel?.profileObservable.bind { [weak self] profile in
-            guard let self else { return }
-            self.nftIds = profile?.nfts ?? []
-            self.likeNFTIds = profile?.likes ?? []
-            self.viewModel?.fetchNtfCards(nftIds: self.nftIds)
-        }
-        
-        viewModel?.showErrorAlert = { [weak self] message in
-            guard let self else { return }
-            self.resumeMethodOnMainThread(self.showNotificationBanner, with: message)
-        }
+        setUpBindings()
     }
     
     // MARK: - Init
@@ -52,7 +37,11 @@ final class MyNftsViewController: UIViewController {
         view.backgroundColor = .ypWhiteWithDarkMode
         view.tintColor = .ypBlackWithDarkMode
         title = NSLocalizedString("profile.myNFT.title", tableName: "Localizable", comment: "My Nft")
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: Resources.Images.NavBar.sortIcon, style: .plain, target: self, action: #selector(sortButtonTapped))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: Resources.Images.NavBar.sortIcon,
+            style: .plain, target: self,
+            action: #selector(sortButtonTapped)
+        )
     }
     
     private lazy var collectionView: UICollectionView = {
@@ -81,6 +70,25 @@ final class MyNftsViewController: UIViewController {
     private func sortNFT(_ sortOptions: SortingOption) {
         alertService = nil
         viewModel?.sortNFTCollection(option: sortOptions)
+    }
+    // MARK: - SetupBindings
+    private func setUpBindings() {
+        viewModel?.nftCardsObservable.bind { [weak self] _ in
+            guard let self else { return }
+            self.resumeMethodOnMainThread(self.collectionView.reloadData, with: ())
+        }
+        
+        viewModel?.profileObservable.bind { [weak self] profile in
+            guard let self else { return }
+            self.nftIds = profile?.nfts ?? []
+            self.likeNFTIds = profile?.likes ?? []
+            self.viewModel?.fetchNtfCards(nftIds: self.nftIds)
+        }
+        
+        viewModel?.showErrorAlert = { [weak self] message in
+            guard let self else { return }
+            self.resumeMethodOnMainThread(self.showNotificationBanner, with: message)
+        }
     }
 
     // MARK: - Actions

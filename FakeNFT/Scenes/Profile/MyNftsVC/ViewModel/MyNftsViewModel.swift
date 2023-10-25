@@ -3,7 +3,7 @@ import UIKit
 final class MyNFTViewModel: MyNFTViewModelProtocol {
 
     // MARK: - Private Dependencies:
-    private var dataProvider: DataProviderProtocol?
+    private var dataProvider: ProfileDataProviderProtocol?
 
     // MARK: - Observable Values:
     var nftCardsObservable: Observable<NFTCards?> {
@@ -29,11 +29,19 @@ final class MyNFTViewModel: MyNFTViewModelProtocol {
     @Observable
     private(set) var users: Users?
     
-    private var currentSortOption: SortingOption?
+    private var currentSortOption: SortingOption? {
+        didSet {
+            guard let currentSortOption else { return }
+            sortStorage.saveSorting(currentSortOption)
+        }
+    }
+    private let sortStorage: MyNftSortStorageProtocol
 
     // MARK: - Lifecycle:
-    init(dataProvider: DataProviderProtocol?) {
+    init(dataProvider: ProfileDataProviderProtocol?) {
         self.dataProvider = dataProvider
+        sortStorage = MyNftSortStorage()
+        currentSortOption = sortStorage.fetchSorting()
         fetchUsers()
         fetchProfile()
     }
@@ -62,7 +70,7 @@ final class MyNFTViewModel: MyNFTViewModelProtocol {
 
         switch option {
         case .byPrice:
-            cards = nftCards.sorted(by: { $0.price < $1.price })
+            cards = nftCards.sorted(by: { $0.price > $1.price })
         case .byRating:
             cards = nftCards.sorted { nft1, nft2 in
                 nft1.rating > nft2.rating

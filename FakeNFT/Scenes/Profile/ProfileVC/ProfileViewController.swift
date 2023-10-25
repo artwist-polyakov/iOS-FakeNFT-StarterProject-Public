@@ -207,7 +207,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            let myNFTViewModel = MyNFTViewModel(dataProvider: DataProvider())
+            let myNFTViewModel = MyNFTViewModel(dataProvider: ProfileDataProvider())
             let myNftsVC = MyNftsViewController(viewModel: myNFTViewModel)
             myNftsVC.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(myNftsVC, animated: true)

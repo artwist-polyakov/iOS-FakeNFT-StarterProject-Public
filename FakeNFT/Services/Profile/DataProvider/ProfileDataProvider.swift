@@ -1,6 +1,6 @@
 import Foundation
 
-final class DataProvider: DataProviderProtocol {
+final class ProfileDataProvider: ProfileDataProviderProtocol {
     let networkClient = DefaultNetworkClient()
     
     func fetchProfile(completion: @escaping (Result<Profile, Error>) -> Void) {
