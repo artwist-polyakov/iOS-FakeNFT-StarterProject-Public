@@ -126,7 +126,7 @@ final class MyNFTViewModel: MyNFTViewModelProtocol {
     }
     
     private func fetchProfile() {
-        dataProvider?.fetchProfile(completion: { [weak self] result in
+        dataProvider?.fetchProfile { [weak self] result in
             guard let self else { return }
             switch result {
             case .success(let profile):
@@ -135,6 +135,6 @@ final class MyNFTViewModel: MyNFTViewModelProtocol {
                 let errorString = HandlingErrorService().handlingHTTPStatusCodeError(error: failure)
                 self.showErrorAlert?(errorString ?? "")
             }
-        })
+        }
     }
 }
