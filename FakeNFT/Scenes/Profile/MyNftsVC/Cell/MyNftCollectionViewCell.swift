@@ -4,7 +4,9 @@ protocol MyNFTCollectionViewCellDelegate: AnyObject {
     func didTapLikeButton(id: String)
 }
 
-final class MyNFTCollectionViewCell: UICollectionViewCell {
+final class MyNFTCollectionViewCell: UICollectionViewCell, ReuseIdentifying {
+    
+    static let defaultReuseIdentifier = "MyNFTCell"
     
     private var model: NFTCell?
 
@@ -149,10 +151,4 @@ final class MyNFTCollectionViewCell: UICollectionViewCell {
               let imageUrl = URL(string: firstImage) else { return }
         imageView.kf.setImage(with: imageUrl)
     }
-}
-
-// MARK: - ReuseIdentifying
-
-extension MyNFTCollectionViewCell: ReuseIdentifying {
-    static let defaultReuseIdentifier = "MyNFTCell"
 }
