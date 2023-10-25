@@ -74,7 +74,7 @@ final class EditProfileViewController: UIViewController {
     
     private lazy var nameLabel: UILabel = {
         let nameLabel = UILabel()
-        nameLabel.text = NSLocalizedString("profile.editScreen.name",tableName: "Localizable", comment: "Name")
+        nameLabel.text = NSLocalizedString("profile.editScreen.name", tableName: "Localizable", comment: "Name")
         nameLabel.font = UIFont.systemFont(ofSize: 22, weight: .bold)
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(nameLabel)
@@ -109,23 +109,17 @@ final class EditProfileViewController: UIViewController {
         return descriptionLabel
     }()
     
-    private lazy var descriptionUnderView: UIView = {
-        let descriptionUnderView = UIView()
-        descriptionUnderView.layer.cornerRadius = 12
-        descriptionUnderView.backgroundColor = .ypLightGreyWithDarkMode
-        descriptionUnderView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(descriptionUnderView)
-        return descriptionUnderView
-    }()
-    
-    private lazy var descriptionTextField: UITextField = {
-        let descriptionTextField = UITextField()
-        descriptionTextField.font = UIFont.systemFont(ofSize: 17, weight: .regular)
-        descriptionTextField.textAlignment = .left
-        descriptionTextField.contentVerticalAlignment = .top
+    private lazy var descriptionTextField: UITextView = {
+        let descriptionTextField = UITextView()
         descriptionTextField.text = profile?.description
         descriptionTextField.translatesAutoresizingMaskIntoConstraints = false
-        descriptionUnderView.addSubview(descriptionTextField)
+         view.addSubview(descriptionTextField)
+        descriptionTextField.font = .systemFont(ofSize: 17)
+        descriptionTextField.textContainerInset = UIEdgeInsets(top: 11, left: 16, bottom: 11, right: 16)
+        descriptionTextField.backgroundColor = .ypLightGreyWithDarkMode
+        descriptionTextField.layer.cornerRadius = 12
+        descriptionTextField.layer.masksToBounds = true
+        descriptionTextField.delegate = self
         return descriptionTextField
     }()
     
@@ -182,18 +176,13 @@ final class EditProfileViewController: UIViewController {
             
             descriptionLabel.topAnchor.constraint(equalTo: nameUnderView.bottomAnchor, constant: 22),
             descriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+                        
+            descriptionTextField.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            descriptionTextField.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            descriptionTextField.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 8),
+            descriptionTextField.heightAnchor.constraint(equalToConstant: 135),
             
-            descriptionUnderView.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 8),
-            descriptionUnderView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            descriptionUnderView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            descriptionUnderView.heightAnchor.constraint(equalToConstant: 135),
-            
-            descriptionTextField.leadingAnchor.constraint(equalTo: descriptionUnderView.leadingAnchor, constant: 16),
-            descriptionTextField.trailingAnchor.constraint(equalTo: descriptionUnderView.trailingAnchor, constant: -16),
-            descriptionTextField.topAnchor.constraint(equalTo: descriptionUnderView.topAnchor, constant: 11),
-            descriptionTextField.bottomAnchor.constraint(equalTo: descriptionUnderView.bottomAnchor, constant: 11),
-            
-            siteLabel.topAnchor.constraint(equalTo: descriptionUnderView.bottomAnchor, constant: 22),
+            siteLabel.topAnchor.constraint(equalTo: descriptionTextField.bottomAnchor, constant: 22),
             siteLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             
             siteUnderView.topAnchor.constraint(equalTo: siteLabel.bottomAnchor, constant: 8),
@@ -253,4 +242,11 @@ final class EditProfileViewController: UIViewController {
         showURLInputAlert()
     }
 
+}
+
+extension EditProfileViewController: UITextFieldDelegate, UITextViewDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
