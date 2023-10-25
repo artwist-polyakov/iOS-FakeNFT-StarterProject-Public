@@ -1,6 +1,6 @@
 import UIKit
 
-struct MyNFTCellViewModel {
+struct MyNFTCellModel {
     let nftImage: UIImage
     let nftName: String
     let nftRateImage: UIImage
