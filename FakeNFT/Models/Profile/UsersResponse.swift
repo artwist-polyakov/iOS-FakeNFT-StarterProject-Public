@@ -10,10 +10,10 @@ struct UserResponse: Decodable {
     let id: String
     
     func convert() -> User {
-        return User(name: self.name,
-                    avatar: self.avatar,
-                    rating: self.rating,
-                    id: self.id)
+        User(name: self.name,
+             avatar: self.avatar,
+             rating: self.rating,
+             id: self.id)
     }
 }
 

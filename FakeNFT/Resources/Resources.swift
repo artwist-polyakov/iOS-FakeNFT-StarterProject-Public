@@ -20,12 +20,12 @@ enum Resources {
         }
         
         enum RateImages {
-            static let rateZero = UIImage(named: "rateZero")
-            static let rateOne = UIImage(named: "rateOne")
-            static let rateTwo = UIImage(named: "rateTwo")
-            static let rateThree = UIImage(named: "rateThree")
-            static let rateFour = UIImage(named: "rateFour")
-            static let rateFive = UIImage(named: "rateFive")
+            static let zero = UIImage(named: "rateZero")
+            static let one = UIImage(named: "rateOne")
+            static let two = UIImage(named: "rateTwo")
+            static let three = UIImage(named: "rateThree")
+            static let four = UIImage(named: "rateFour")
+            static let five = UIImage(named: "rateFive")
         }
         
         enum NFTBrowsing {

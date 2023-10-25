@@ -38,7 +38,12 @@ extension UIViewController {
     }
     
     func setupBackButtonItem() {
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = UIBarButtonItem(
+            title: nil,
+            style: .plain,
+            target: nil,
+            action: nil
+        )
     }
     
     private func hideActivityIndicator() {

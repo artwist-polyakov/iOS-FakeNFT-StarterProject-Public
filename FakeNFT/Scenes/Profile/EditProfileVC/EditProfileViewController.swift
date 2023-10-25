@@ -6,37 +6,18 @@ final class EditProfileViewController: UIViewController {
     var profile: Profile?
 
     private var photoLink: String?
-    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBackground()
         setupConstrains()
-        guard let imageUrl = URL(string: profile?.avatar ?? "") else { return }
-        KingfisherManager.shared.retrieveImage(with: imageUrl) { [weak self] result in
-            guard let self else { return }
-            switch result {
-            case .success(let imageResult):
-                self.editAvatarButton.setImage(imageResult.image, for: .normal)
-            case .failure(let error):
-                let errorString = HandlingErrorService().handlingHTTPStatusCodeError(error: error)
-                self.showNotificationBanner(with: errorString ?? "")
-            }
-        }
+        loadImage()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        guard let profile else { return }
-        let updateProfile = Profile(name: nameTextField.text ?? "",
-                                    avatar: photoLink ?? profile.avatar,
-                                    description: descriptionTextField.text ?? profile.description,
-                                    website: siteTextField.text ?? profile.website,
-                                    nfts: profile.nfts,
-                                    likes: profile.likes,
-                                    id: profile.id)
-        delegate?.updateProfile(profile: updateProfile)
+        updateProfile()
     }
     
     // MARK: - SetupUI
@@ -198,14 +179,6 @@ final class EditProfileViewController: UIViewController {
     
     // MARK: - Alert
     
-    func showErrorAlert(message: String) {
-        let alert = UIAlertController(title: NSLocalizedString("general.error",tableName: "Localizable", comment: "Error"), message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: NSLocalizedString("general.ok",tableName: "Localizable", comment: "OK"), style: .default, handler: nil)
-        alert.addAction(okAction)
-
-        present(alert, animated: true, completion: nil)
-    }
-    
     private func showURLInputAlert() {
         let alert = UIAlertController(
             title: NSLocalizedString("profile.editScreen.addPicture", tableName: "Localizable", comment: "add picture"),
@@ -242,6 +215,36 @@ final class EditProfileViewController: UIViewController {
         showURLInputAlert()
     }
 
+}
+
+// MARK: - Private functions
+private extension EditProfileViewController {
+    func loadImage() {
+        guard let imageUrl = URL(string: profile?.avatar ?? "") else { return }
+        KingfisherManager.shared.retrieveImage(with: imageUrl) { [weak self] result in
+            guard let self else { return }
+            switch result {
+            case .success(let imageResult):
+                self.editAvatarButton.setImage(imageResult.image, for: .normal)
+            case .failure(let error):
+                let errorString = HandlingErrorService().handlingHTTPStatusCodeError(error: error)
+                self.showNotificationBanner(with: errorString ?? "")
+            }
+        }
+    }
+    
+    func updateProfile() {
+        guard let profile else { return }
+        let updateProfile = Profile(name: nameTextField.text ?? "",
+                                    avatar: photoLink ?? profile.avatar,
+                                    description: descriptionTextField.text ?? profile.description,
+                                    website: siteTextField.text ?? profile.website,
+                                    nfts: profile.nfts,
+                                    likes: profile.likes,
+                                    id: profile.id)
+        
+        delegate?.updateProfile(profile: updateProfile)
+    }
 }
 
 extension EditProfileViewController: UITextFieldDelegate, UITextViewDelegate {

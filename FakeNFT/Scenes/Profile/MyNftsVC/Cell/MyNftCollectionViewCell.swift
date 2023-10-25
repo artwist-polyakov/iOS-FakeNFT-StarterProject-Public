@@ -114,17 +114,17 @@ final class MyNFTCollectionViewCell: UICollectionViewCell {
     private func setRateImage(_ number: Int) {
         switch number {
         case 0:
-            rateImage.image = Resources.Images.RateImages.rateZero
+            rateImage.image = Resources.Images.RateImages.zero
         case 1:
-            rateImage.image = Resources.Images.RateImages.rateOne
+            rateImage.image = Resources.Images.RateImages.one
         case 2:
-            rateImage.image = Resources.Images.RateImages.rateTwo
+            rateImage.image = Resources.Images.RateImages.two
         case 3:
-            rateImage.image = Resources.Images.RateImages.rateThree
+            rateImage.image = Resources.Images.RateImages.three
         case 4:
-            rateImage.image = Resources.Images.RateImages.rateFour
+            rateImage.image = Resources.Images.RateImages.four
         case 5:
-            rateImage.image = Resources.Images.RateImages.rateFive
+            rateImage.image = Resources.Images.RateImages.five
         default:
             break
         }
