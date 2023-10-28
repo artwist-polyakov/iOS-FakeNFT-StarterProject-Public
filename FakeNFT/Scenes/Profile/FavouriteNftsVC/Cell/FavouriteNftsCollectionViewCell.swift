@@ -6,8 +6,6 @@ protocol FavouriteNftsCollectionViewCellDelegate: AnyObject {
 
 final class FavouriteNftsCollectionViewCell: UICollectionViewCell, ReuseIdentifying {
     
-    static var defaultReuseIdentifier: String = "FavouritesNFTCell"
-    
     private var model: NFTCell?
 
     weak var delegate: FavouriteNftsCollectionViewCellDelegate?
