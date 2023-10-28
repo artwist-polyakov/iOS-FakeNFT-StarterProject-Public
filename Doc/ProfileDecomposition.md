@@ -63,20 +63,20 @@
 
 # 3rd Iteration
 
-## Экран Избранные NFT (est 72 hr; fact x).
+## Экран Избранные NFT (est 72 hr; fact 48 hr).
 
 #### Верстка
-- верстка навбара (est: 60 min; fact: x min).
-- ячейка таблицы (est: 60 min; fact: x min).
-- создание сcollectionView (est: 120 min; fact: x min).
-- label "у вас еще нет избранных нфт" (est: 15 min; fact: x min).
+- верстка навбара (est: 60 min; fact: 10 min).
+- ячейка таблицы (est: 60 min; fact: 50 min).
+- создание сcollectionView (est: 120 min; fact: 20 min).
+- label "у вас еще нет избранных нфт" (est: 15 min; fact: 10 min).
 
-`Total:` est: 255 min; fact: x min.
+`Total:` est: 255 min; fact: 90 min.
 
 #### Логика
-- Скрытие/показ лейбла/коллекции и элементов навбара в зависимости от наличия избранных нфт у пользователя (est: 30 min; fact: x min).
-- Логика сетевого слоя для загрузки избранных нфт пользователя (est: 120 min; fact: x min).
-- Логика сетевого слоя для удаления нфт из избранных (est: 120 min; fact: x min).
-- Индикатор загрузки (est: 30 min; fact: x min).
+- Скрытие/показ лейбла/коллекции и элементов навбара в зависимости от наличия избранных нфт у пользователя (est: 30 min; fact: 15 min).
+- Логика сетевого слоя для загрузки избранных нфт пользователя (est: 120 min; fact: 20 min).
+- Логика сетевого слоя для удаления нфт из избранных (est: 120 min; fact: 30 min).
+- Индикатор загрузки (est: 30 min; fact: 30 min).
 
-`Total:` est: 300 min; fact: x min.
+`Total:` est: 300 min; fact: 95 min.
