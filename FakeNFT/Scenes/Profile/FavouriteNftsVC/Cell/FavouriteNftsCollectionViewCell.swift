@@ -70,8 +70,8 @@ final class FavouriteNftsCollectionViewCell: UICollectionViewCell, ReuseIdentify
             
             likeButton.topAnchor.constraint(equalTo: imageView.topAnchor, constant: 5),
             likeButton.trailingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: -5),
-            likeButton.widthAnchor.constraint(equalToConstant: 26),
-            likeButton.heightAnchor.constraint(equalToConstant: 22),
+            likeButton.widthAnchor.constraint(equalToConstant: 21),
+            likeButton.heightAnchor.constraint(equalToConstant: 18),
             
             nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 7),
             nameLabel.leadingAnchor.constraint(equalTo: imageView.trailingAnchor, constant: 12),
