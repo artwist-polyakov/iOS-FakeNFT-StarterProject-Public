@@ -7,7 +7,7 @@ final class MyNftsViewController: UIViewController {
     var nftIds = [String]()
 
     private var viewModel: MyNFTViewModelProtocol?
-    private var alertService: AlertServiceProtocol?
+    private var alertService: ProfileAlertServiceProtocol?
     private lazy var dataProvider = ProfileDataProvider()
     
     // MARK: - Lifecycle
@@ -38,7 +38,7 @@ final class MyNftsViewController: UIViewController {
         view.tintColor = .ypBlackWithDarkMode
         title = NSLocalizedString("profile.myNFT.title", tableName: "Localizable", comment: "My Nft")
         navigationItem.rightBarButtonItem = UIBarButtonItem(
-            image: Resources.Images.NavBar.sortIcon,
+            image: ProfileResources.Images.NavBar.sortIcon,
             style: .plain, target: self,
             action: #selector(sortButtonTapped)
         )
@@ -93,7 +93,7 @@ final class MyNftsViewController: UIViewController {
 
     // MARK: - Actions
     @objc private func sortButtonTapped() {
-        alertService = UniversalAlertService()
+        alertService = ProfileAlertService()
         alertService?.showActionSheet(title: NSLocalizedString("sorting.title",tableName: "Localizable", comment: "Sorting title"),
                                       sortingOptions: [.byPrice, .byRating, .byName, .close],
                                       on: self,

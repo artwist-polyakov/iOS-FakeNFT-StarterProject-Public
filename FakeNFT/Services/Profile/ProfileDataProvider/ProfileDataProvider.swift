@@ -4,8 +4,8 @@ final class ProfileDataProvider: ProfileDataProviderProtocol {
     let networkClient = DefaultNetworkClient()
     
     func fetchProfile(completion: @escaping (Result<Profile, Error>) -> Void) {
-        let url = createURLWithPathAndQueryItems(path: Resources.Network.MockAPI.Paths.profile, queryItems: nil)
-        let request = NetworkRequestModel(endpoint: url, httpMethod: .get)
+        let url = createURLWithPathAndQueryItems(path: ProfileResources.Network.MockAPI.Paths.profile, queryItems: nil)
+        let request = ProfileNetworkRequestModel(endpoint: url, httpMethod: .get)
         networkClient.send(request: request, type: Profile.self) { result in
             switch result {
             case .success(let profile):
@@ -17,8 +17,8 @@ final class ProfileDataProvider: ProfileDataProviderProtocol {
     }
     
     func changeProfile(profile: Profile, completion: @escaping (Result<Profile, Error>) -> Void) {
-        let url = createURLWithPathAndQueryItems(path: Resources.Network.MockAPI.Paths.profile, queryItems: nil)
-        let request = NetworkRequestModel(endpoint: url, httpMethod: .put, dto: profile)
+        let url = createURLWithPathAndQueryItems(path: ProfileResources.Network.MockAPI.Paths.profile, queryItems: nil)
+        let request = ProfileNetworkRequestModel(endpoint: url, httpMethod: .put, dto: profile)
         networkClient.send(request: request, type: Profile.self) { result in
             switch result {
             case .success(let profile):
@@ -32,9 +32,9 @@ final class ProfileDataProvider: ProfileDataProviderProtocol {
     func fetchUsersNFT(userId: String?, nftsId: [String]?, completion: @escaping (Result<NFTCards, Error>) -> Void) {
         
         let queryItems = [URLQueryItem(name: "filter", value: userId)]
-        let url = createURLWithPathAndQueryItems(path: Resources.Network.MockAPI.Paths.nftCard, queryItems: queryItems)
+        let url = createURLWithPathAndQueryItems(path: ProfileResources.Network.MockAPI.Paths.nftCard, queryItems: queryItems)
         
-        let request = NetworkRequestModel(endpoint: url, httpMethod: .get)
+        let request = ProfileNetworkRequestModel(endpoint: url, httpMethod: .get)
         networkClient.send(request: request, type: NFTCards.self) { result in
             switch result {
             case .success(let result):
@@ -52,11 +52,11 @@ final class ProfileDataProvider: ProfileDataProviderProtocol {
         }
     }
     
-    func fetchUsers(completion: @escaping (Result<[User], Error>) -> Void) {
+    func fetchUsers(completion: @escaping (Result<[ProfileUserModel], Error>) -> Void) {
         
-        let url = createURLWithPathAndQueryItems(path: Resources.Network.MockAPI.Paths.users, queryItems: nil)
+        let url = createURLWithPathAndQueryItems(path: ProfileResources.Network.MockAPI.Paths.users, queryItems: nil)
         
-        let request = NetworkRequestModel(endpoint: url,
+        let request = ProfileNetworkRequestModel(endpoint: url,
                                           httpMethod: .get,
                                           dto: nil)
         networkClient.send(request: request, type: UsersResponse.self) { result in
@@ -73,7 +73,7 @@ final class ProfileDataProvider: ProfileDataProviderProtocol {
     
     private func createURLWithPathAndQueryItems(path: String, queryItems: [URLQueryItem]?) -> URL? {
         
-        let baseUrlString = Resources.Network.MockAPI.defaultStringURL
+        let baseUrlString = ProfileResources.Network.MockAPI.defaultStringURL
         
         guard var components = URLComponents(string: baseUrlString) else {
             return nil

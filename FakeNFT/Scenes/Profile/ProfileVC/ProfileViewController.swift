@@ -47,7 +47,7 @@ final class ProfileViewController: UIViewController {
     }
     
     private func setupNavBar() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: Resources.Images.editProfile,
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: ProfileResources.Images.editProfile,
                                                             style: .plain,
                                                             target: self,
                                                             action: #selector(presentEditVC))
@@ -186,7 +186,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         cell.accessoryType = .disclosureIndicator
-        cell.accessoryView = UIImageView(image: Resources.Images.forwardButtonImage)
+        cell.accessoryView = UIImageView(image: ProfileResources.Images.forwardButtonImage)
         cell.textLabel?.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         cell.selectionStyle = .none
         cell.backgroundColor = .clear

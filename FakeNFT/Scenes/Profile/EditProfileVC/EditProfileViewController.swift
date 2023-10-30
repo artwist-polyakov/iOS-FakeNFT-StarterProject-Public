@@ -29,7 +29,7 @@ final class EditProfileViewController: UIViewController {
     
     private lazy var closeButton: UIButton = {
         let closeButton = UIButton()
-        closeButton.setImage(Resources.Images.NFTBrowsing.cancellButton, for: .normal)
+        closeButton.setImage(ProfileResources.Images.NFTBrowsing.cancellButton, for: .normal)
         closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
         closeButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(closeButton)

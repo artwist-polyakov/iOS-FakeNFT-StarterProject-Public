@@ -1,6 +1,6 @@
 import Foundation
 
-struct NFTCell {
+struct ProfileNFTCell {
     let name: String
     let images: [String]
     let rating: Int
@@ -11,4 +11,4 @@ struct NFTCell {
     let isAddedToCard: Bool
 }
 
-typealias NFTCells = [NFTCell]
+typealias NFTCells = [ProfileNFTCell]

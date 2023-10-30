@@ -60,11 +60,11 @@ enum SortingOption: CaseIterable {
     }
 }
 
-protocol AlertServiceProtocol {
+protocol ProfileAlertServiceProtocol {
     func showActionSheet(title: String?, sortingOptions: [SortingOption], on viewController: UIViewController, completion: @escaping (SortingOption) -> Void)
 }
 
-final class UniversalAlertService: AlertServiceProtocol {
+final class ProfileAlertService: ProfileAlertServiceProtocol {
     func showActionSheet(title: String?, sortingOptions: [SortingOption], on viewController: UIViewController, completion: @escaping (SortingOption) -> Void) {
         let alertController = UIAlertController(title: title, message: nil, preferredStyle: .actionSheet)
         

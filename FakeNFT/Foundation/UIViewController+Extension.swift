@@ -103,7 +103,7 @@ extension UIViewController {
         if let lastShowTime = UIViewController.lastBannerShowTime,
            currentTime.timeIntervalSince(lastShowTime) < 2 { return }
         
-        let image = Resources.Images.NotificationBanner.notificationBannerImage
+        let image = ProfileResources.Images.NotificationBanner.notificationBannerImage
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
         imageView.image = image
         imageView.tintColor = .ypWhiteUniversal

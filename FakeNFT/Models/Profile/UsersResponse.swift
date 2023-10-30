@@ -1,6 +1,6 @@
 import Foundation
 
-struct UserResponse: Decodable {
+struct ProfileUserResponse: Decodable {
     let name: String
     let avatar: String
     let description: String
@@ -9,12 +9,12 @@ struct UserResponse: Decodable {
     let rating: String
     let id: String
     
-    func convert() -> User {
-        User(name: self.name,
+    func convert() -> ProfileUserModel {
+        ProfileUserModel(name: self.name,
              avatar: self.avatar,
              rating: self.rating,
              id: self.id)
     }
 }
 
-typealias UsersResponse = [UserResponse]
+typealias UsersResponse = [ProfileUserResponse]

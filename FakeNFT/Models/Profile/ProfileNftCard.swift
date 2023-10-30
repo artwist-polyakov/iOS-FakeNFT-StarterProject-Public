@@ -1,6 +1,6 @@
 import Foundation
 
-struct NFTCard: Decodable {
+struct ProfileNFTCard: Decodable {
     let createdAt: String
     let name: String
     let images: [String]
@@ -11,4 +11,4 @@ struct NFTCard: Decodable {
     let id: String
 }
 
-typealias NFTCards = [NFTCard]
+typealias NFTCards = [ProfileNFTCard]

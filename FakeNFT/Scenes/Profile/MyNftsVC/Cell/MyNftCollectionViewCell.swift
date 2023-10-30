@@ -8,7 +8,7 @@ final class MyNFTCollectionViewCell: UICollectionViewCell, ReuseIdentifying {
     
     static let defaultReuseIdentifier = "MyNFTCell"
     
-    private var model: NFTCell?
+    private var model: ProfileNFTCell?
 
     weak var delegate: MyNFTCollectionViewCellDelegate?
     
@@ -34,7 +34,7 @@ final class MyNFTCollectionViewCell: UICollectionViewCell, ReuseIdentifying {
     
     private lazy var likeButton: UIButton = {
         let likeButton = UIButton()
-        likeButton.setImage(Resources.Images.NFTCollectionCell.unlikedButton, for: .normal)
+        likeButton.setImage(ProfileResources.Images.NFTCollectionCell.unlikedButton, for: .normal)
         likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
         return likeButton
     }()
@@ -116,17 +116,17 @@ final class MyNFTCollectionViewCell: UICollectionViewCell, ReuseIdentifying {
     private func setRateImage(_ number: Int) {
         switch number {
         case 0:
-            rateImage.image = Resources.Images.RateImages.zero
+            rateImage.image = ProfileResources.Images.RateImages.zero
         case 1:
-            rateImage.image = Resources.Images.RateImages.one
+            rateImage.image = ProfileResources.Images.RateImages.one
         case 2:
-            rateImage.image = Resources.Images.RateImages.two
+            rateImage.image = ProfileResources.Images.RateImages.two
         case 3:
-            rateImage.image = Resources.Images.RateImages.three
+            rateImage.image = ProfileResources.Images.RateImages.three
         case 4:
-            rateImage.image = Resources.Images.RateImages.four
+            rateImage.image = ProfileResources.Images.RateImages.four
         case 5:
-            rateImage.image = Resources.Images.RateImages.five
+            rateImage.image = ProfileResources.Images.RateImages.five
         default:
             break
         }
@@ -134,7 +134,7 @@ final class MyNFTCollectionViewCell: UICollectionViewCell, ReuseIdentifying {
     
     // MARK: - Methods
     
-    func setupCellData(_ model: NFTCell) {
+    func setupCellData(_ model: ProfileNFTCell) {
         self.model = model
         nameLabel.text = model.name
         setRateImage(model.rating)
@@ -142,8 +142,8 @@ final class MyNFTCollectionViewCell: UICollectionViewCell, ReuseIdentifying {
         priceLabel.text = "\(model.price) ETH"
         
         let likeButtonImage = model.isLiked ?
-                Resources.Images.NFTCollectionCell.likedButton :
-                Resources.Images.NFTCollectionCell.unlikedButton
+                ProfileResources.Images.NFTCollectionCell.likedButton :
+                ProfileResources.Images.NFTCollectionCell.unlikedButton
 
         likeButton.setImage(likeButtonImage, for: .normal)
         

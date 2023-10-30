@@ -1,6 +1,6 @@
 import UIKit
 
-enum Resources {
+enum ProfileResources {
     
     enum Images {
         static let editProfile = UIImage(named: "editIcon")

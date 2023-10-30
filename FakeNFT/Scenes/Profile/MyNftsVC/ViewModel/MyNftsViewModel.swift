@@ -66,7 +66,7 @@ final class MyNFTViewModel: MyNFTViewModelProtocol {
     func sortNFTCollection(option: SortingOption) {
         guard let nftCards else { return }
 
-        var cards = [NFTCard]()
+        var cards = [ProfileNFTCard]()
 
         switch option {
         case .byPrice:
